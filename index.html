@@ -9,12 +9,11 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-
 html{scroll-behavior:smooth;}
 
 body{
 font-family:'Poppins',sans-serif;
-background:#050816;
+background:linear-gradient(135deg,#050816,#0f172a);
 color:#e2e8f0;
 }
 
@@ -31,23 +30,22 @@ z-index:1000;
 
 nav ul{
 display:flex;
-gap:15px;
+gap:10px;
 list-style:none;
-background:rgba(15,23,42,0.7);
+background:rgba(15,23,42,0.85);
 padding:10px 20px;
 border-radius:50px;
-backdrop-filter:blur(12px);
+backdrop-filter:blur(15px);
 border:1px solid rgba(99,102,241,0.3);
-box-shadow:0 0 20px rgba(99,102,241,0.3);
+box-shadow:0 0 25px rgba(99,102,241,0.3);
 flex-wrap:wrap;
-justify-content:center;
 }
 
 nav a{
 color:#cbd5f5;
 text-decoration:none;
-font-size:14px;
-padding:8px 15px;
+font-size:13px;
+padding:8px 14px;
 border-radius:20px;
 transition:0.3s;
 }
@@ -55,49 +53,66 @@ transition:0.3s;
 nav a:hover{
 background:#6366f1;
 color:white;
-box-shadow:0 0 15px #6366f1;
 }
 
 /* CONTAINER */
 .container{
 max-width:1100px;
-margin:140px auto 40px;
+margin:120px auto 40px;
 padding:20px;
 }
 
 /* CARD */
 .card{
-background:rgba(15,23,42,0.6);
-backdrop-filter:blur(12px);
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(15px);
 border:1px solid rgba(99,102,241,0.2);
 border-radius:20px;
 padding:25px;
 margin-bottom:25px;
-box-shadow:0 0 25px rgba(0,0,0,0.6);
+box-shadow:0 0 20px rgba(0,0,0,0.5);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 25px rgba(99,102,241,0.5);
+transform:translateY(-8px);
+box-shadow:0 0 35px rgba(99,102,241,0.6);
 }
 
-/* HEADER */
-header{text-align:center;}
-
+/* PROFILE */
 .profile-img{
-width:150px;
-height:150px;
+width:220px;
+height:220px;
 border-radius:50%;
 object-fit:cover;
-border:3px solid #22d3ee;
-box-shadow:0 0 25px #22d3ee;
+border:5px solid #22d3ee;
+box-shadow:0 0 30px #22d3ee;
 margin:auto;
+display:block;
+transition:0.3s ease;
 }
 
-h1{margin-top:10px;color:#22d3ee;}
+.profile-img:hover{
+transform:scale(1.06);
+box-shadow:0 0 50px #22d3ee;
+}
+
+/* NAME FIXED CENTER */
+h1{
+margin-top:15px;
+font-size:30px;
+background:linear-gradient(90deg,#22d3ee,#6366f1,#ec4899);
+-webkit-background-clip:text;
+color:transparent;
+
+/* ✔ CENTER FIX */
+text-align:center;
+display:block;
+}
+
+/* TEXT */
 h2,h3{text-align:center;margin-bottom:15px;color:#818cf8;}
-p{text-align:center;color:#cbd5e1;}
+p{text-align:center;color:#cbd5e1;line-height:1.6;}
 
 /* BUTTON */
 .download-btn{
@@ -111,65 +126,37 @@ transition:0.3s;
 }
 
 .download-btn:hover{
+transform:scale(1.05);
 box-shadow:0 0 20px #22d3ee;
 }
 
-/* PROJECT GRID */
+/* GRID */
 .media-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
 .media-grid img{
 width:100%;
 border-radius:12px;
-cursor:pointer;
-transition:0.3s;
 }
 
-.media-grid img:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #6366f1;
-}
-
-.caption{
-text-align:center;
-font-size:13px;
-color:#94a3b8;
-}
-
-/* CERTIFICATES */
+/* CERT */
 .project-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 justify-items:center;
-align-items:center;
-}
-
-.project-item{
-text-align:center;
-padding:10px;
 }
 
 .project-item img{
+max-width:250px;
 width:100%;
-max-width:180px;
-height:auto;
-object-fit:contain;
 border-radius:12px;
-display:block;
-margin:0 auto;
-transition:0.3s;
 }
 
-.project-item img:hover{
-transform:scale(1.08);
-box-shadow:0 0 20px #6366f1;
-}
-
-/* VIDEOS */
+/* VIDEO */
 .video-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -179,15 +166,11 @@ gap:20px;
 iframe{
 width:100%;
 height:180px;
-border:none;
 border-radius:12px;
 }
 
 /* LINKS */
-.links-list li{
-list-style:none;
-margin:10px 0;
-}
+.links-list li{list-style:none;margin:10px 0;}
 
 .links-list a{
 display:block;
@@ -202,7 +185,6 @@ transition:0.3s;
 .links-list a:hover{
 background:#6366f1;
 color:white;
-box-shadow:0 0 15px #6366f1;
 }
 
 /* FORM */
@@ -227,10 +209,6 @@ border:none;
 border-radius:10px;
 color:white;
 cursor:pointer;
-}
-
-button:hover{
-box-shadow:0 0 20px #22d3ee;
 }
 
 /* FOOTER */
@@ -258,44 +236,50 @@ color:#94a3b8;
 <div class="container">
 
 <header class="card" id="home">
-<img src="nera.jpeg" class="profile-img">
+<img src="nera.jpeg" class="profile-img" alt="Nera Bahilot">
 <h1>Nera Bahilot</h1>
-<p>College of Computer Studies</p>
+<p>Aspiring Web Developer | UI/UX Enthusiast</p>
 </header>
 
 <div class="card" id="about">
-<h2>About Me</h2>
-<p>A Computer Studies student passionate about web development, UI/UX design, and building modern digital systems.</p>
+<h2>ABOUT ME</h2>
+<p>
+I am Nira motivated Computer Studies student with a strong passion for web development and user interface design.  
+My goal is to create modern, responsive, and meaningful digital experiences that solve real-world problems.
+</p>
 </div>
 
 <div class="card">
-<h3>My Resume</h3>
-<div style="text-align:center;">
-<a href="Lan.pdf" target="_blank" class="download-btn">📄 Download Resume</a>
+<h3>MY RESUME</h3>
+<p>You can view my resume to learn more about my skills and experience.</p>
+<div style="text-align:center;margin-top:15px;">
+<a href="#" class="download-btn">📄 View My Resume</a>
 </div>
 </div>
 
 <div class="card" id="projects">
-<h2>Projects</h2>
+<h2>PROJECTS</h2>
 <div class="media-grid">
-<div><img src="Rn.jpg"><div class="caption">Cisco Networking</div></div>
-<div><img src="Ners.jpg"><div class="caption">T-Shirt Design</div></div>
-<div><img src="Pn.jpg"><div class="caption">System Project</div></div>
+<div><img src="Rn.jpg"><p class="caption">Cisco Networking Setup</p></div>
+<div><img src="Ners.jpg"><p class="caption">Creative T-Shirt Design</p></div>
+<div><img src="Pn.jpg"><p class="caption">System Development Project</p></div>
 </div>
 </div>
 
 <div class="card">
-<h2>Certificate</h2>
+<h2>CERTIFICATE</h2>
+<p>Training and certifications I completed.</p>
 <div class="project-grid">
 <div class="project-item">
-<img src="Nrs.png" alt="Certificate">
-<p>IT Seminar</p>
+<img src="Nrs.png">
+<p>IT Seminar Certificate</p>
 </div>
 </div>
 </div>
 
 <div class="card" id="videos">
-<h2>Tutorials</h2>
+<h2>TUTORIALS</h2>
+<p>Learning resources for web development.</p>
 <div class="video-grid">
 <iframe src="https://www.youtube.com/embed/UB1O30fR-EE"></iframe>
 <iframe src="https://www.youtube.com/embed/yfoY53QXEnI"></iframe>
@@ -303,20 +287,31 @@ color:#94a3b8;
 </div>
 </div>
 
-<div class="card" id="links">
-<h2>Links</h2>
-<ul class="links-list">
-<li><a href="#">Canva Portfolio</a></li>
-<li><a href="#">Figma Design</a></li>
-<li><a href="#">E-commerce Design</a></li>
-</ul>
+<div class="card">
+  <h2>Links</h2>
+
+  <div class="links-container">
+
+    <a href="https://www.canva.com" target="_blank" class="link-card">
+      Canva Portfolio
+    </a>
+
+    <a href="https://www.figma.com" target="_blank" class="link-card">
+      Figma Design
+    </a>
+
+    <a href="https://www.shopify.com" target="_blank" class="link-card">
+      E-commerce Design
+    </a>
+
+  </div>
 </div>
 
 <div class="card" id="contact">
-<h2>Contact</h2>
+<h2>CONTACT</h2>
 <form>
 <input type="text" placeholder="Your Name">
-<input type="email" placeholder="Email">
+<input type="email" placeholder="Your Email">
 <textarea placeholder="Message"></textarea>
 <button type="submit">Send</button>
 </form>
@@ -329,4 +324,4 @@ color:#94a3b8;
 </div>
 
 </body>
-  </html>
+      </html>
